@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <log4net>
+    <appender name="DirGrepLogFile" type="log4net.Appender.RollingFileAppender">
+      <file value="${LOCALAPPDATA}\\ACTY\\DirGrep.log" />
+      <param name="AppendToFile" value="true"/>
+      <appendToFile value="true" />
+      <rollingStyle value="Size" />
+      <maxSizeRollBackups value="100" />
+      <maximumFileSize value="5MB" />
+      <rollingStyle value="Size" />
+      <staticLogFileName value="true" />
+      <datePattern value="yyyyMMdd" />
+      <Encoding value="UTF-8" />
+      <layout type="log4net.Layout.PatternLayout">
+        <!-- %d:DateTime, %t:Thread, %-5p:Categories, %c:LoggerName, %m:ADKMessage, %n:line sepalator-->
+        <param name="ConversionPattern" value="%d, %t, %-5p, %m%n" />
+      </layout>
+    </appender>
+
+    <root>
+      <level value="FATAL" />
+      <level value="ERROR" />
+      <level value="WARN" />
+      <level value="INFO" />
+      <level value="DEBUG" />
+      <appender-ref ref="DirGrepLogFile" />
+    </root>
+
+  </log4net>
+</configuration>
